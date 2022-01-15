@@ -18,6 +18,7 @@ Pacman agents (in searchAgents.py).
 """
 
 import util
+import time
 
 class SearchProblem:
     """
@@ -87,6 +88,31 @@ def depthFirstSearch(problem):
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
     """
     "*** YOUR CODE HERE ***"
+    print("Start:", problem.getStartState())
+    print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
+    print("Start's successors:", problem.getSuccessors(problem.getStartState()))
+
+    closedSet = list()
+    fringeStack = util.Stack()
+    actions = list()
+    fringeStack.push(problem.getStartState())
+
+    while fringeStack:
+        if fringeStack.isEmpty():
+            return None
+        currentState = fringeStack.pop()
+        print("CurrentState:", currentState)
+        if problem.isGoalState(currentState):
+            print("Goal Found")
+            return actions
+        if currentState not in closedSet:
+            closedSet.append(currentState)
+            for childNode in problem.getSuccessors(currentState):
+                print(problem.getSuccessors(currentState))
+                fringeStack.push(childNode[0])
+                actions.append(childNode[1])
+
+
     util.raiseNotDefined()
 
 def breadthFirstSearch(problem):
