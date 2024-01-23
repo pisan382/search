@@ -86,8 +86,13 @@ def depthFirstSearch(problem):
     print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
     """
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    
+    #fringe = util.Stack() # stack that store all nodes that is waiting to be visited
+    #current = (problem.getStartState(), [], [])
+    #while not fringe.isEmpty():
+   
+
+
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
