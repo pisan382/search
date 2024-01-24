@@ -86,20 +86,20 @@ def depthFirstSearch(problem):
     print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
     """
-    frontier = Stack()
+    fringe = Stack()
     visited = set()
 
-    frontier.push((problem.getStartState(), []))
+    fringe.push((problem.getStartState(), []))
 
-    while not frontier.isEmpty():
-        node, path = frontier.pop()
+    while not fringe.isEmpty():
+        node, path = fringe.pop()
         if problem.isGoalState(node):
             return path
 
         if node not in visited:
             visited.add(node)
             for successor in problem.getSuccessors(node):
-                frontier.push((successor[0], path + [successor[1]]))
+                fringe.push((successor[0], path + [successor[1]]))
  
    
 
