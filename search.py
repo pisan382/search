@@ -18,7 +18,7 @@ Pacman agents (in searchAgents.py).
 """
 
 import util
-
+from util import Stack
 class SearchProblem:
     """
     This class outlines the structure of a search problem, but doesn't implement
@@ -100,8 +100,6 @@ def depthFirstSearch(problem):
             visited.add(node)
             for successor in problem.getSuccessors(node):
                 frontier.push((successor[0], path + [successor[1]]))
-
-    return []
  
    
 
